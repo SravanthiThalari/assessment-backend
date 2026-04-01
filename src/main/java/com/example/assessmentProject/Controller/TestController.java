@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/tests")
-@CrossOrigin(origins = "assessment-frontend-theta.vercel.app")
+@CrossOrigin(origins = "*")
 
 public class TestController {
 

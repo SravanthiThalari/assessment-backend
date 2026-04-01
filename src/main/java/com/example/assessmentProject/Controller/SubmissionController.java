@@ -17,7 +17,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/submit")
-@CrossOrigin(origins = "assessment-frontend-theta.vercel.app")
+@CrossOrigin("*")
 
 public class SubmissionController {
 
