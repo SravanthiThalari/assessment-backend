@@ -9,5 +9,4 @@ class AssessmentProjectApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

@@ -1,0 +1,1 @@
+web: java -jar target/ASSESSMENTPROJECT-0.0.1-SNAPSHOT.jar

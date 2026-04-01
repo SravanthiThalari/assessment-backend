@@ -1,11 +1,17 @@
+ROM maven:3.9.6-eclipse-temurin-21 AS build
+
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+
+RUN mvn clean package -DskipTests
+
+# Use smaller JDK image to run app
 FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 
-COPY . .
+EXPOSE 8080
 
-RUN chmod +x mvnw
-
-RUN ./mvnw clean package -DskipTests
-
-CMD ["java","-jar","target/*.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
